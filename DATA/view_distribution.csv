@@ -1,0 +1,15 @@
+Finding Labels,AP,PA
+Atelectasis,616,1122
+Cardiomegaly,98,513
+Consolidation,139,173
+Edema,116,19
+Effusion,285,709
+Emphysema,105,245
+Fibrosis,22,402
+Hernia,3,58
+Infiltration,776,3436
+Mass,216,730
+Nodule,204,1144
+Pleural_Thickening,73,467
+Pneumonia,37,98
+Pneumothorax,142,304
