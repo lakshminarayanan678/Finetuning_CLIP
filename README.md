@@ -23,7 +23,7 @@ DATA/
 │       ├── PATHCHANGE.py           (Changes dataset path acc to local comp)
 │       ├── test.csv
 │       ├── train.csv
-│       └── val.csv
+│       ├── val.csv
 │       └── requirements.txt        (For installing dependencies)
 ├── FINALDATA/
 │       ├── images                  (Folder containing path to the images)
