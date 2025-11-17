@@ -25,6 +25,7 @@ DATA/
 │       ├── test.csv
 │       ├── train.csv
 │       └── val.csv
+│       └── requirements.txt        (For installing dependencies)
 │── EXERCISES/
 │       ├── similarity_calc.ipynb
 │       └── softmax.ipynb
@@ -66,12 +67,6 @@ DATA/
     pip install -r requirements.txt
     ```
 
-### 📝 Key Dependencies (`requirements.txt`)
-
-The required packages for both training and full evaluation (including plotting) are:
-
-
----
 
 ## ⚙️ Running the Model Locally
 
