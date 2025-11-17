@@ -10,7 +10,7 @@ The fine-tuning process focuses solely on adding a trainable projection head to 
 
 The project is organized to clearly separate data, core training/inference logic, and execution wrappers.
 
-
+``` bash
 DATA/
 │── DATA_ANALYSIS/
 │       ├── Results/
@@ -39,23 +39,10 @@ DATA/
 │       └── train_cli.py
 ├── WORKING_NOTEBOOKS/              (Notebooks used for personal use and training)
 │   ├── Finetuning_CLIP.ipynb      
-│   └── Openai_clip.ipynb          
+│   └── Openai_clip.ipynb
+|   └── Readme.MD                   (References used for model training and inference)          
 └── README.md
-
-
-| Directory/File | Purpose |
-| :--- | :--- |
-| `DATA/` | Contains all raw and preprocessed data, CSV files, and analysis scripts. |
-| `DATA/DATASET/images/` | Stores the actual Chest X-ray image files. |
-| `DATA/DATASET/train.csv` | Training manifest linking image paths to captions/labels. |
-| `DATA/DATASET/test.csv` | Test manifest for final evaluation. |
-| `DATA/DATASET/val.csv` | Validation manifest for monitoring training progress. |
-| `DATA/DATA_ANALYSIS/Results/` | Stores results from data analysis and initial experimentation. |
-| `MAIN/My_Run/` | **Primary execution directory.** Contains the core Python scripts (`train.py`, `infer.py`). |
-| `MAIN/My_Run/results/` | Output directory for evaluation reports and confusion matrices. |
-| `MAIN/To_Run_Locally/` | Wrapper scripts (`*_cli.py`) for simplified local execution with pre-set paths. |
-| `WORKING_NOTEBOOKS/` | Jupyter notebooks for initial model testing and exploration (e.g., zero-shot). |
-| `requirements.txt` | List of all required Python dependencies. |
+```
 
 ---
 
