@@ -1,10 +1,10 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-input_csv = "/content/drive/MyDrive/COLAB/updated_data.csv"
-train_csv = "/content/drive/MyDrive/COLAB/train.csv"
-val_csv   = "/content/drive/MyDrive/COLAB/val.csv"
-test_csv  = "/content/drive/MyDrive/COLAB/test.csv"
+input_csv = r"C:\Users\DELL\Desktop\CLIP\Finetuning_CLIP\DATA\FINALDATA\balanced_dataset.csv"
+train_csv = r"C:\Users\DELL\Desktop\CLIP\Finetuning_CLIP\DATA\FINALDATA\train.csv"
+val_csv   = r"C:\Users\DELL\Desktop\CLIP\Finetuning_CLIP\DATA\FINALDATA\val.csv"
+test_csv  = r"C:\Users\DELL\Desktop\CLIP\Finetuning_CLIP\DATA\FINALDATA\test.csv"
 
 
 # For 80-10-10 split

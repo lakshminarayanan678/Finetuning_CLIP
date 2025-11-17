@@ -1,3 +1,6 @@
+# This script updates image file paths in a CSV file to point to a new 
+# directory while retaining the original filenames.
+
 import pandas as pd
 import os
 import re
