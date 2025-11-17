@@ -17,7 +17,6 @@ DATA/
 │       └── DataAnalysis_5class.py  (Contains dataset description of the 5 classes)
 │       └── DataAnalysis.py         (Contains dataset description of all the classes)
 │── DATASET/
-│       ├── images/
 │       ├── balanced_dataset.csv    (Combined dataset after preprocessing)
 │       ├── DATASET_PREPR.py        (Main preprocessing code)
 │       ├── DATASETSPLIT.py         (Dataset split code)
@@ -26,6 +25,8 @@ DATA/
 │       ├── train.csv
 │       └── val.csv
 │       └── requirements.txt        (For installing dependencies)
+├── FINALDATA/
+│       └── images    (Folder containing path to the images)
 │── EXERCISES/
 │       ├── similarity_calc.ipynb
 │       └── softmax.ipynb
