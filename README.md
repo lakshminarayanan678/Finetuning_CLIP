@@ -43,7 +43,8 @@ DATA/
 ├── WORKING_NOTEBOOKS/              (Notebooks used for personal use and training)
 │   ├── Finetuning_CLIP.ipynb      
 │   └── Openai_clip.ipynb
-|   └── Readme.MD                   (References used for model training and inference)          
+|   └── Readme.MD                   (References used for model training and inference)
+├── requirements.txt         
 └── README.md
 ```
 
