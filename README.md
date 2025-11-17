@@ -1,6 +1,6 @@
 # 🌟 Fine-Tuning CLIP for Chest X-ray Classification
 
-This repository contains the code and resources for fine-tuning the **CLIP (Contrastive Language-Image Pre-training)** model to perform multi-class classification on Chest X-ray images, specifically identifying five common pulmonary diseases: **atelectasis, mass, effusion, infiltration, and nodule**.
+This repository contains the code and resources for fine-tuning the **CLIP (Contrastive Language-Image Pre-training)** model to perform multi-class classi    fication on Chest X-ray images, specifically identifying five common pulmonary diseases: **atelectasis, mass, effusion, infiltration, and nodule**.
 
 The fine-tuning process focuses solely on adding a trainable projection head to the image encoder while leveraging CLIP's powerful zero-shot image-text understanding capabilities.
 
@@ -9,6 +9,39 @@ The fine-tuning process focuses solely on adding a trainable projection head to 
 ## 📂 Repository Structure
 
 The project is organized to clearly separate data, core training/inference logic, and execution wrappers.
+
+
+DATA/
+│── DATA_ANALYSIS/
+│       ├── Results/
+│       └── DataAnalysis_5class.py  (Contains dataset description of the 5 classes)
+│       └── DataAnalysis.py         (Contains dataset description of all the classes)
+│── DATASET/
+│       ├── images/
+│       ├── balanced_dataset.csv    (Combined dataset after preprocessing)
+│       ├── DATASET_PREPR.py        (Main preprocessing code)
+│       ├── DATASETSPLIT.py         (Dataset split code)
+│       ├── PATHCHANGE.py           (Changes dataset path acc to local comp)
+│       ├── test.csv
+│       ├── train.csv
+│       └── val.csv
+│── EXERCISES/
+│       ├── similarity_calc.ipynb
+│       └── softmax.ipynb
+├── EXTRAS/
+├── MAIN/
+│   ├── My_Run/
+│   │   ├── results/                (Conf Mat, Weights saved from Google Colab Run)
+│   │   ├── infer.py                
+│   │   └── train.py
+│   └── To_Run_Locally/
+│       ├── infer_cli.py
+│       └── train_cli.py
+├── WORKING_NOTEBOOKS/              (Notebooks used for personal use and training)
+│   ├── Finetuning_CLIP.ipynb      
+│   └── Openai_clip.ipynb          
+└── README.md
+
 
 | Directory/File | Purpose |
 | :--- | :--- |
