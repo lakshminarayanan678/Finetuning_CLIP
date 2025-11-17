@@ -30,8 +30,8 @@ The project is organized to clearly separate data, core training/inference logic
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/YourUsername/YourRepoName.git](https://github.com/YourUsername/YourRepoName.git)
-    cd YourRepoName
+    git clone https://github.com/lakshminarayanan678/Finetuning_CLIP.git
+    cd {your repo path}
     ```
 
 2.  **Create and activate a virtual environment (recommended):**
@@ -55,61 +55,72 @@ The required packages for both training and full evaluation (including plotting)
 
 ## ⚙️ Running the Model Locally
 
-All execution is managed via command-line interface (CLI) scripts. The scripts in `MAIN/My_Run/` offer maximum flexibility, while the wrappers in `MAIN/To_Run_Locally/` simplify common execution paths.
+All execution can be managed via command-line interface (CLI) scripts for reproducability. The scripts in `MAIN/My_Run/` offer maximum flexibility, while the wrappers in `MAIN/To_Run_Locally/` simplify common execution paths.
 
 ### 1. Training the Model (`train.py`)
 
 The core training logic is in `MAIN/My_Run/train.py`.
 
-#### Option A: Using the Core Script (Full Control)
-
-Use this option to specify all paths and hyperparameters manually.
-
+#### Option A: Using the Simplified CLI Wrapper (train_cli.py)
+This wrapper script may contain pre-set paths to simplify execution.
 ```bash
-python MAIN/My_Run/train.py \
+ python MAIN/To_Run_Locally/train_cli.py \
     --train_csv_path DATA/DATASET/train.csv \
     --val_csv_path DATA/DATASET/val.csv \
     --save_dir MAIN/My_Run/checkpoints \
+    --model_name ViT-B/32 \
+    --num_epochs \
     --batch_size 32 \
     --learning_rate 1e-3 \
+    --checkpoint_path \
+    --run_name \ 
     --use_wandb # Add this flag to enable Weights & Biases logging
 ```
+(The default for checkpoint path is none, so u can use it only when u have pretrained weights already) 
 
 💡 Resuming Training
 To continue from a saved checkpoint, use the --checkpoint_path and set the correct --start_epoch for accurate logging:
+
 ```bash
 # Example continuation from epoch 80
 --checkpoint_path MAIN/My_Run/checkpoints/clip_epoch_80.pt --start_epoch 81
 ```
 
+(Consult train_cli.py for any specific default arguments or configuration)
 
-#### Option B: Using the Simplified CLI Wrapper (train_cli.py)
-This wrapper script may contain pre-set paths to simplify execution.
+#### Option B: Using the Core Script (Full Control)
+
+Use this option to specify all paths and hyperparameters manually.
 
 ```bash
-python MAIN/To_Run_Locally/train_cli.py
+python MAIN/My_Run/train.py
+
 ```
-(Consult train_cli.py for any specific default arguments or configuration)
+
 
 ### 2. Evaluation (Inference) (infer.py)
 The evaluation and metric calculation logic is in MAIN/My_Run/infer.py.
 
-#### Option A: Using the Core Script (Full Control)
-You must specify the path to the model checkpoint you wish to evaluate.
+
+#### Option A: Using the Simplified CLI Wrapper (infer_cli.py)
 
 ```bash
-python MAIN/My_Run/infer.py \
+python MAIN/To_Run_Locally/infer_cli.py \
     --test_csv_path DATA/DATASET/test.csv \
     --model_path MAIN/My_Run/checkpoints/clip_ft_best.pt \
-    --results_dir MAIN/My_Run/results
+    --results_dir MAIN/My_Run/results \
+    --clip_model_name ViT-B/32
 ```
-The script will print the Classification Report and save a confusion matrix plot to the specified results directory.
 
-#### Option B: Using the Simplified CLI Wrapper (infer_cli.py)
-
-```bash
-python MAIN/To_Run_Locally/infer_cli.py
-```
 (Consult infer_cli.py to confirm the default model checkpoint and test CSV paths it uses.)
 
 
+#### Option B: Using the Core Script (Full Control)
+
+You must specify the path to the model checkpoint you wish to evaluate.
+
+```bash
+python MAIN/My_Run/infer.py
+```
+
+The script will print the Classification Report and save a confusion matrix plot to the specified results directory.
