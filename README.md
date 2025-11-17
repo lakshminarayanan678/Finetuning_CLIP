@@ -26,7 +26,8 @@ DATA/
 │       └── val.csv
 │       └── requirements.txt        (For installing dependencies)
 ├── FINALDATA/
-│       └── images    (Folder containing path to the images)
+│       ├── images                  (Folder containing path to the images)
+│       ├── (#Ignore)
 │── EXERCISES/
 │       ├── similarity_calc.ipynb
 │       └── softmax.ipynb
